@@ -69,8 +69,8 @@ public class HomeController{
         model.addAttribute("employee", employeeRepository.findById(id));
         return "redirect:/";
     }
-        @PostMapping("/search")
-        public String processForm(String firstname,Model model) {
+        @RequestMapping("/search")
+        public String processForm(@RequestParam("search") String firstname,Model model) {
 
             model.addAttribute("employees", employeeRepository.findByFirstName(firstname));
             return "list";
