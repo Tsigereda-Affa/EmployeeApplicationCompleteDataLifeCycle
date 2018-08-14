@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8 " />
+    <title>Title</title>
+</head>
+<body>
+<a>Tsi Software Testing Company</a>
+<a href="/">List All Employee</a>
+<a href="/addDepartment">Add New Department</a>
+<a href="/add">Add New Employee</a>
+<form action="#"
+      th:action="@{/processDepartment}"
+      th:object="${department}"
+      method="POST">
+    <input type="hidden" th:filed="*{id}" />
+    Department: <input type="text" th:field="*{name}" />
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span> <br />
+    <input type="submit" value="Submit" />
+
+</form>
+
+</body>
+</html>
