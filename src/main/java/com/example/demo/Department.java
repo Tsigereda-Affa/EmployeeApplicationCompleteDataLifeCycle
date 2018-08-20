@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
+@Table(name="DEPARTMENT_DATA")
 public class Department {
     @Id
     @GeneratedValue(strategy  = GenerationType.AUTO)
