@@ -47,8 +47,8 @@
         <th>Actions</th>
     </tr>
     <tr th:each="employee : ${employees}">
-        <td th:text="${employee.firstName}"> </td>
-        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.firstname}"> </td>
+        <td th:text="${employee.lastname}"></td>
         <td th:text="${employee.department.name}"></td>
     <td>
         <a th:href="@{/update/{id}(id=${employee.id})}">Update</a>

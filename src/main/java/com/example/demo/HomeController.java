@@ -41,7 +41,11 @@ public class HomeController{
             model.addAttribute("department", departmentRepository.findAll());
             return "employeeform";
         }
+
         employeeRepository.save(employee);
+
+//        model.addAttribute("departments", departmentRepository.findAll());
+//        model.addAttribute("employee",employee);
         return "redirect:/";
     }
     @GetMapping("/addDepartment")
@@ -67,12 +71,19 @@ public class HomeController{
     public String updateEmployee(@PathVariable("id") long id, Model model) {
         model.addAttribute("departments", departmentRepository.findAll());
         model.addAttribute("employee", employeeRepository.findById(id));
-        return "redirect:/";
+        return "employeeform";
     }
+   @ RequestMapping("/delete/{id}")
+    public String updateEmployee(@PathVariable("id") long id) {
+        employeeRepository.deleteById(id);
+        return "redirect:/";
+
+    }
+
         @RequestMapping("/search")
         public String processForm(@RequestParam("search") String firstname,Model model) {
 
-            model.addAttribute("employees", employeeRepository.findByFirstName(firstname));
+            model.addAttribute("employees", employeeRepository.findByFirstname(firstname));
             return "list";
         }
 

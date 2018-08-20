@@ -12,11 +12,11 @@
           th:action="@{/process}"
           th:object="${employee}"
       method="POST">
-      <input type="hidden" th:filed="*{id}" />
-    First Name: <input type="text" th:field="*{firstName}" />
-    <span th:if="${#fields.hasErrors('firstName')}" th:errors="firstName"></span> <br />
-    Last Name: <input type="text" th:field="*{lastName}" />
-    <span th:if="${#fields.hasErrors()}" th:errors="lastName"></span> <br />
+      <input type="hidden" th:field="*{id}" />
+    First Name: <input type="text" th:field="*{firstname}" />
+    <span th:if="${#fields.hasErrors('firstname')}" th:errors="firstname"></span> <br />
+    Last Name: <input type="text" th:field="*{lastname}" />
+    <span th:if="${#fields.hasErrors()}" th:errors="lastname"></span> <br />
     Department:
     <select name="department" id="department" class="custom-select" th:field="*{department}" >
         <option value="">Select Department</option>

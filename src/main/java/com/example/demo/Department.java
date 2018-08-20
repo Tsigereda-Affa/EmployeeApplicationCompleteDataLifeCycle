@@ -11,7 +11,7 @@ public class Department {
     @GeneratedValue(strategy  = GenerationType.AUTO)
     private long id;
 
-    @NotNull
+
     @Size(min=2)
     private String name;
 
