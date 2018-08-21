@@ -6,8 +6,7 @@ import javax.validation.constraints.Size;
 
 
     @Entity
-    //THIS IS ADDED TO MAKE THE HEROKU WORK
-    @Table(name="EMPLOYEE_DATA")
+
     public class Employee {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
